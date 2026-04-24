@@ -6,13 +6,13 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return '''
-    <h2>Disaster Processing System</h2>
-    <a href="/run">Click here to Run Project</a>
+    <h2>Disaster Dashboard</h2>
+    <a href="/dashboard">Open Dashboard</a>
     '''
 
-@app.route('/run')
-def run_project():
-    output = subprocess.getoutput("python main.py")
+@app.route('/dashboard')
+def dashboard():
+    output = subprocess.getoutput("python dashboard.py")
     return f"<pre>{output}</pre>"
 
 if __name__ == "__main__":
